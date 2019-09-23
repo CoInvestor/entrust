@@ -1,6 +1,6 @@
 {
-    "name": "zizaco/entrust",
-    "description": "This package provides a flexible way to add Role-based Permissions to Laravel",
+    "name": "coinvestor/entrust",
+    "description": "Forked from zizaco/entrust. This package provides a flexible way to add Role-based Permissions to Laravel including Laravel 6",
     "keywords": ["laravel","illuminate","auth","roles","acl","permission"],
     "license": "MIT",
     "authors": [
