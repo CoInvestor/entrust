@@ -1,11 +1,11 @@
 <?php
 
-use Zizaco\Entrust\Middleware\EntrustRole;
 use Mockery as m;
+use Zizaco\Entrust\Middleware\EntrustRole;
 
-class EntrustRoleTest extends MiddlewareTest
+class EntrustRoleTest extends MiddlewareBase
 {
-    public function testHandle_IsGuestWithMismatchingRole_ShouldAbort403()
+    public function testHandleIsGuestWithMismatchingRoleShouldAbort403()
     {
         /*
         |------------------------------------------------------------
@@ -35,7 +35,7 @@ class EntrustRoleTest extends MiddlewareTest
         $this->assertAbortCode(403);
     }
 
-    public function testHandle_IsGuestWithMatchingRole_ShouldAbort403()
+    public function testHandleIsGuestWithMatchingRoleShouldAbort403()
     {
         /*
         |------------------------------------------------------------
@@ -65,7 +65,7 @@ class EntrustRoleTest extends MiddlewareTest
         $this->assertAbortCode(403);
     }
 
-    public function testHandle_IsLoggedInWithMismatchRole_ShouldAbort403()
+    public function testHandleIsLoggedInWithMismatchRoleShouldAbort403()
     {
         /*
         |------------------------------------------------------------
@@ -95,7 +95,7 @@ class EntrustRoleTest extends MiddlewareTest
         $this->assertAbortCode(403);
     }
 
-    public function testHandle_IsLoggedInWithMatchingRole_ShouldNotAbort()
+    public function testHandleIsLoggedInWithMatchingRoleShouldNotAbort()
     {
         /*
         |------------------------------------------------------------

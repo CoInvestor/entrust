@@ -1,11 +1,11 @@
 <?php
 
-use Zizaco\Entrust\Middleware\EntrustAbility;
 use Mockery as m;
+use Zizaco\Entrust\Middleware\EntrustAbility;
 
-class EntrustAbilityTest extends MiddlewareTest
+class EntrustAbilityTest extends MiddlewareBase
 {
-    public function testHandle_IsGuestWithNoAbility_ShouldAbort403()
+    public function testHandleIsGuestWithNoAbilityShouldAbort403()
     {
         /*
         |------------------------------------------------------------
@@ -35,7 +35,7 @@ class EntrustAbilityTest extends MiddlewareTest
         $this->assertAbortCode(403);
     }
 
-    public function testHandle_IsGuestWithAbility_ShouldAbort403()
+    public function testHandleIsGuestWithAbilityShouldAbort403()
     {
         /*
         |------------------------------------------------------------
@@ -65,7 +65,7 @@ class EntrustAbilityTest extends MiddlewareTest
         $this->assertAbortCode(403);
     }
 
-    public function testHandle_IsLoggedInWithNoAbility_ShouldAbort403()
+    public function testHandleIsLoggedInWithNoAbilityShouldAbort403()
     {
         /*
         |------------------------------------------------------------
@@ -95,7 +95,7 @@ class EntrustAbilityTest extends MiddlewareTest
         $this->assertAbortCode(403);
     }
 
-    public function testHandle_IsLoggedInWithAbility_ShouldNotAbort()
+    public function testHandleIsLoggedInWithAbilityShouldNotAbort()
     {
         /*
         |------------------------------------------------------------
